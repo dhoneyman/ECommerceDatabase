@@ -7,7 +7,7 @@ const ProductTag = require('./ProductTag');
 // Products belongsTo Category
 Product.belongsTo(Category, {
   through: {
-    model: 'Product',
+    model: 'product',
     key: 'category_id'
   }
 });
@@ -16,7 +16,7 @@ Product.belongsTo(Category, {
 
 Category.belongsToMany(Product, {
   through: {
-    model: 'Product',
+    model: 'product',
     key: 'category_id'
   }
 });
@@ -25,7 +25,7 @@ Category.belongsToMany(Product, {
 
 Product.belongsToMany(Tag, {
   through: {
-    model: 'ProductTag',
+    model: 'product_tag',
     key: 'product_id'
   }
 });
@@ -33,7 +33,7 @@ Product.belongsToMany(Tag, {
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
   through: {
-    model: 'ProductTag',
+    model: 'product_tag',
     key: 'tag_id'
   }
 });
